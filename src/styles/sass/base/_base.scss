@@ -1,0 +1,139 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: $color-grey-700;
+  line-height: 1.5;
+  font-size: 1.6rem;
+
+  position: relative;
+}
+
+.container {
+  max-width: 130rem;
+  padding: 0 3.6rem;
+  margin: 0 auto;
+
+  @include respond(tab-port) {
+    padding: 0 2.8rem;
+  }
+
+  @include respond(phone) {
+    padding: 0 2rem;
+  }
+}
+
+button {
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+*:disabled {
+  cursor: not-allowed !important;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+select:disabled,
+input:disabled {
+  background-color: $color-grey-200;
+  color: $color-grey-500;
+}
+
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid $color-primary-500;
+  outline-offset: -1px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  /* For dark mode */
+  filter: grayscale($image-grayscale) opacity($image-opacity);
+}
+
+::selection {
+  background-color: $color-primary-500;
+  color: $color-grey-900;
+}
+
+/* *:focus {
+  outline: none;
+  box-shadow: 0 0 6px 3px var(--color-primary);
+} */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $color-primary-700;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 50px;
+}
+
+/* button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  } 
+}
+*/
