@@ -27,8 +27,8 @@ export const experienceData = [
     type: 'experience',
     institution: 'كالبنيان المرصوص , Internship',
     specialization: 'Full Stack Developer intern ',
-    startYear: 2021,
-    endYear: 2022,
+    startYear: 'Sep 2021',
+    endYear: 'Feb 2022',
     details:
       'Gained hands-on experience in frontend development during the internship.',
   },
@@ -37,8 +37,8 @@ export const experienceData = [
     type: 'experience',
     institution: 'Career 180 , Internship',
     specialization: 'Frontend development Trainee',
-    startYear: 2024,
-    endYear: 'Present',
+    startYear: 'Oct 2024',
+    endYear: 'Dec 2024',
     details:
       'Enrolled in an intensive frontend development training, focused on creating responsive web applications using React.js and JavaScript. Gaining real-world experience through collaborative projects and mentorship.',
   },
