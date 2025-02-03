@@ -1,4 +1,4 @@
-import Contact from '../Pages/Contact';
+import Contact from '../pages/Contact';
 
 function Footer() {
   const year = new Date().getFullYear();
