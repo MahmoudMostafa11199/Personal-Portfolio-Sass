@@ -1,14 +1,20 @@
 import { skills } from '../redux/skills';
 
+import HeadingSection from '../components/HeadingSection';
+
 function Skills() {
   return (
     <section className="skills-section">
       <div className="container">
-        <h2 className="heading heading__secondary">Skills</h2>
+        <HeadingSection>Skills</HeadingSection>
 
         <div className="skills">
           {skills.map((skill) => (
-            <div key={skill.id} className="skills__item">
+            <div
+              key={skill.id}
+              className="skills__item"
+              data-aos="zoom-in-down"
+            >
               <svg
                 className="skills__img"
                 xmlnsXlink="http://www.w3.org/1999/xlink"

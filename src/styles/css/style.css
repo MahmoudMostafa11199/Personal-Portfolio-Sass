@@ -610,14 +610,13 @@ button:focus-visible {
 
 .footer {
   font-size: 1.4rem;
-  background-color: #111827;
+  padding: 2.8rem 3.6rem;
+  background-color: #1f2937;
 }
 .footer .copyright {
   font-size: 1.6rem;
   text-align: center;
-  padding: 4.8rem 3.6rem;
   color: #9ca3af;
-  background-color: rgba(255, 255, 255, 0.1);
 }
 @media only screen and (max-width: 40.5em) {
   .footer .copyright {
@@ -635,6 +634,7 @@ button:focus-visible {
 .contact {
   padding-block: 9.6rem;
   color: #4b5563;
+  background-color: #111827;
 }
 @media only screen and (max-width: 40.5em) {
   .contact {
@@ -926,7 +926,6 @@ button:focus-visible {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 9;
 }
 @media only screen and (max-width: 40.5em) {
   .experience__line {

@@ -1,4 +1,7 @@
+import { useEffect } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
+import { initAOS } from './utils/aos-animation';
 
 import AppLayout from './shared/AppLayout';
 import Home from './pages/Home';
@@ -36,6 +39,10 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  useEffect(() => {
+    initAOS();
+  }, []);
+
   return <RouterProvider router={router} />;
 }
 

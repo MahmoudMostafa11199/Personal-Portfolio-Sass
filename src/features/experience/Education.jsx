@@ -1,18 +1,25 @@
 import { GraduationCap, Briefcase } from '@phosphor-icons/react';
 
-import { educationData, experienceData } from '../redux/educations';
+import { educationData, experienceData } from '../../redux/educations';
+
+import HeadingSection from '../../components/HeadingSection';
 
 function Education() {
   return (
     <>
       <section className="experience-section">
         <div className="container">
-          <h2 className="heading heading__secondary">Education & Experience</h2>
+          <HeadingSection>Education & Experience</HeadingSection>
           <div className="experience__container">
-            <div className="experience__line"></div>
+            <div className="experience__line" data-aos="zoom-in"></div>
 
             {educationData.map((edu) => (
-              <div key={edu.id} className="experience__item" data-id={edu.id}>
+              <div
+                key={edu.id}
+                className="experience__item"
+                data-id={edu.id}
+                data-aos="fade-up-right"
+              >
                 <div className="experience__content">
                   <h4 className="experience__degree">{edu.degree}</h4>
                   <p className="experience__institution">
@@ -31,7 +38,12 @@ function Education() {
               </div>
             ))}
             {experienceData.map((exp) => (
-              <div key={exp.id} className="experience__item" data-id={exp.id}>
+              <div
+                key={exp.id}
+                className="experience__item"
+                data-id={exp.id}
+                data-aos="fade-up-left"
+              >
                 <div className="education__content">
                   <h4 className="experience__degree">{exp.specialization}</h4>
                   <p className="experience__institution">

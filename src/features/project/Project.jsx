@@ -6,7 +6,7 @@ function Project({ project }) {
     project;
 
   return (
-    <div className="project">
+    <div className="project" data-aos="fade-up">
       <div className="project__img-box">
         <LazyLoad height={300}>
           <img className="project__img" src={image} alt="Project-Image" />
@@ -32,9 +32,13 @@ function Project({ project }) {
       </div>
 
       <div className="project__info">
-        <h4 className="project__title">{title}</h4>
-        <p className="project__description">{description}</p>
-        <ul className="project__languages">
+        <h4 className="project__title" data-aos="fade-up">
+          {title}
+        </h4>
+        <p className="project__description" data-aos="fade-up">
+          {description}
+        </p>
+        <ul className="project__languages" data-aos="fade-up">
           {technologies.map((technology) => (
             <li
               className={technology.split(' ').join('').toLowerCase()}

@@ -2,9 +2,10 @@ import { useSearchParams, Link } from 'react-router-dom';
 import { ArrowRight } from '@phosphor-icons/react';
 
 import Filter from '../components/Filter';
-import Project from '../features/project/Project';
+import HeadingSection from '../components/HeadingSection';
+import Project from '../features/Project/Project';
 
-import { portfolioData, portfolioDataAll } from '../features/project/projects';
+import { portfolioData, portfolioDataAll } from '../features/Project/projects';
 
 function Projects() {
   const [searchParams] = useSearchParams();
@@ -23,7 +24,7 @@ function Projects() {
   return (
     <section className="projects-section">
       <div className="container">
-        <h2 className="heading heading__secondary">Portfolio</h2>
+        <HeadingSection>My Portfolio</HeadingSection>
 
         {/* TAP */}
         <Filter
@@ -42,7 +43,7 @@ function Projects() {
           ))}
         </div>
 
-        <Link className="view-more" to="/projects">
+        <Link className="view-more" to="/projects" data-aos="fade-up">
           <span>View More</span>
           <ArrowRight size={18} />
         </Link>

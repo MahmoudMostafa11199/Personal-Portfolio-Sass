@@ -1,12 +1,14 @@
 import React from 'react';
 
+import Contact from './Contact';
+
 import Button from '../components/Button';
 // import Social from '../components/Social';
 import { downloadCv } from '../utils/downloadCv';
 
-import About from './About';
-import Education from './Education';
-import Services from '../components/Services';
+import AboutSection from '../features/About/AboutSection';
+import Education from '../features/Experience/Education';
+import Services from '../features/Skills/Services';
 import Skills from './Skills';
 import Projects from './Projects';
 
@@ -20,7 +22,7 @@ function Home() {
     <React.Fragment>
       <section className="home-section">
         <div className="home">
-          <div className="home__text-box">
+          <div className="home__text-box" data-aos="fade-right">
             <h1 className="heading heading__primary">
               Hello, My name is
               <br />
@@ -37,7 +39,7 @@ function Home() {
               </Button>
             </div>
           </div>
-          <div className="home__img-box">
+          <div className="home__img-box" data-aos="fade-left">
             <img
               src="/imgs/mahmoud.png"
               alt="perosnal img"
@@ -49,11 +51,12 @@ function Home() {
         </div>
       </section>
 
-      <About />
+      <AboutSection />
       <Education />
       <Services />
       <Skills />
       <Projects />
+      <Contact />
     </React.Fragment>
   );
 }

@@ -5,6 +5,7 @@ function Button({ styleType, type, onclick = null, children }) {
       type={type === 'submit' ? 'submit' : 'button'}
       className={styleType}
       onClick={onclick}
+      data-aos="fade-up"
     >
       {children}
     </button>

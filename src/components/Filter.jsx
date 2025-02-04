@@ -11,7 +11,7 @@ function Filter({ filterField, options }) {
   }
 
   return (
-    <div className="filter">
+    <div className="filter" data-aos="fade-down">
       {options.map((option) => (
         <button
           className={`filter__btn ${

@@ -1,6 +1,7 @@
 .contact {
   padding-block: 9.6rem;
   color: $color-grey-600;
+  background-color: $color-grey-900;
 
   @include respond(phone) {
     padding-block: 6.4rem;
