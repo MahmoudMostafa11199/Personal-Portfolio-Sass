@@ -7,7 +7,7 @@ import Button from '../components/Button';
 import { downloadCv } from '../utils/downloadCv';
 
 import AboutSection from '../features/About/AboutSection';
-import Education from '../features/Experience/Education';
+import Education from '../features/experience/Education';
 import Services from '../features/Skills/Services';
 import Skills from './Skills';
 import Projects from './Projects';
