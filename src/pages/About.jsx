@@ -1,5 +1,5 @@
 import AboutSection from '../features/About/AboutSection';
-import Education from '../features/Experience/Education';
+import Education from '../features/experience/Education';
 
 function About() {
   return (
