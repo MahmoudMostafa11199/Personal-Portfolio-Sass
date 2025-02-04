@@ -3,9 +3,9 @@ import { ArrowRight } from '@phosphor-icons/react';
 
 import Filter from '../components/Filter';
 import HeadingSection from '../components/HeadingSection';
-import Project from '../features/Project/Project';
+import Project from '../features/project/Project';
 
-import { portfolioData, portfolioDataAll } from '../features/Project/projects';
+import { portfolioData, portfolioDataAll } from '../features/project/projects';
 
 function Projects() {
   const [searchParams] = useSearchParams();
