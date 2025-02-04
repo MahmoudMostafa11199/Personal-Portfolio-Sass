@@ -8,7 +8,7 @@ import { downloadCv } from '../utils/downloadCv';
 
 import AboutSection from '../features/About/AboutSection';
 import Education from '../features/experience/Education';
-import Services from '../features/Skills/Services';
+import Services from '../features/skills/Services';
 import Skills from './Skills';
 import Projects from './Projects';
 
