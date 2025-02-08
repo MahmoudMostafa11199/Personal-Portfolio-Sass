@@ -77,10 +77,6 @@ body {
   position: relative;
 }
 
-main {
-  min-height: 95vh;
-}
-
 .container {
   max-width: 130rem;
   padding: 0 3.6rem;
@@ -724,6 +720,7 @@ button:focus-visible {
 }
 
 .contact {
+  min-height: 90vh;
   padding-block: 9.6rem;
   color: #9ca3af;
   background-color: #1f2937;
@@ -1286,6 +1283,7 @@ button:focus-visible {
 }
 
 .project-page {
+  min-height: 65vh;
   background-color: #1f2937;
   color: #f9fafb;
 }
