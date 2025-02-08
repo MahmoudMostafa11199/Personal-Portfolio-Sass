@@ -285,6 +285,11 @@ button:focus-visible {
 .u-padding-vertical-hugo {
   padding-block: 9.6rem;
 }
+@media only screen and (max-width: 40.5em) {
+  .u-padding-vertical-hugo {
+    padding-block: 6.4rem;
+  }
+}
 
 .btn {
   display: inline-block;
@@ -498,12 +503,43 @@ button:focus-visible {
   font-size: 7.4rem;
   font-weight: 900;
 }
+@media only screen and (max-width: 56.25em) {
+  .project-item__index {
+    font-size: 6.4rem;
+  }
+}
+@media only screen and (max-width: 40.5em) {
+  .project-item__index {
+    font-size: 5rem;
+  }
+}
 .project-item__title {
   font-size: 3.6rem;
+  margin-bottom: 0.8rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .project-item__title {
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 40.5em) {
+  .project-item__title {
+    font-size: 2.4rem;
+  }
 }
 .project-item__description {
   font-size: 1.8rem;
   margin-bottom: 3rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .project-item__description {
+    font-size: 1.6rem;
+  }
+}
+@media only screen and (max-width: 40.5em) {
+  .project-item__description {
+    font-size: 1.4rem;
+  }
 }
 .project-item .project__tech-list {
   margin-bottom: 3.6rem;
@@ -519,6 +555,12 @@ button:focus-visible {
   border-radius: 50%;
   transition: background-color 0.3s ease-in-out;
 }
+@media only screen and (max-width: 40.5em) {
+  .project-item__link:link, .project-item__link:visited {
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+}
 .project-item__link:hover, .project-item__link:active {
   background-color: #4b5563;
 }
@@ -532,8 +574,13 @@ button:focus-visible {
 }
 .project-item__img {
   width: 100%;
-  height: 40rem;
+  aspect-ratio: 16/11;
   border: 1px solid #111827;
+}
+@media only screen and (max-width: 56.25em) {
+  .project-item__img {
+    aspect-ratio: 10/5;
+  }
 }
 .project-item__img-container {
   width: 100%;

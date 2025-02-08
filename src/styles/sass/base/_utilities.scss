@@ -8,4 +8,8 @@
 
 .u-padding-vertical-hugo {
   padding-block: 9.6rem;
+
+  @include respond(phone) {
+    padding-block: 6.4rem;
+  }
 }
