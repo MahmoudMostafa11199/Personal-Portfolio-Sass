@@ -9,13 +9,23 @@ import Project from '../features/Projects/Project';
 import { portfolioDataAll } from '../features/Projects/projectsData';
 
 function Projects() {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const projectIndex = searchParams.get('projectIndex') || '0';
+  let projectIndex = searchParams.get('projectIndex') || '0';
 
   const project = portfolioDataAll[projectIndex];
 
-  console.log(project);
+  const handleIndexIncrement = () => {
+    projectIndex = parseInt(projectIndex) + 1;
+    if (projectIndex >= portfolioDataAll.length) projectIndex = 0;
+    setSearchParams({ projectIndex });
+  };
+
+  const handleIndexDecrement = () => {
+    projectIndex = parseInt(projectIndex) - 1;
+    if (projectIndex < 0) projectIndex = portfolioDataAll.length - 1;
+    setSearchParams({ projectIndex });
+  };
 
   return (
     <Fragment>
@@ -25,10 +35,16 @@ function Projects() {
           <Project projectItem={project} />
 
           <div className="project-item__pagination">
-            <Button styleType="btn btn__secondary">
+            <Button
+              styleType="btn btn__secondary"
+              onclick={handleIndexDecrement}
+            >
               <ArrowLeft size={32} />
             </Button>
-            <Button styleType="btn btn__secondary">
+            <Button
+              styleType="btn btn__secondary"
+              onclick={handleIndexIncrement}
+            >
               <ArrowRight size={32} />
             </Button>
           </div>
