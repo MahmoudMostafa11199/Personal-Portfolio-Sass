@@ -74,6 +74,7 @@ body {
   color: #374151;
   line-height: 1.5;
   font-size: 1.6rem;
+  overflow-x: hidden;
   position: relative;
 }
 
@@ -596,8 +597,7 @@ button:focus-visible {
 }
 
 .header {
-  max-width: 100%;
-  min-width: 100%;
+  width: 100%;
   padding-inline: 4rem;
   background-color: #111827;
   color: #d1d5db;
