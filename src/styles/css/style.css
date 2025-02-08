@@ -540,7 +540,6 @@ button:focus-visible {
   display: flex;
   justify-content: flex-end;
   gap: 1.4rem;
-  margin-right: 7rem;
 }
 .project-item__pagination .btn {
   display: flex;

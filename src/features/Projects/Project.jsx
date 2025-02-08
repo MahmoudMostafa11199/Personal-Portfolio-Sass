@@ -2,7 +2,10 @@ import { GithubLogo, ArrowUpRight } from '@phosphor-icons/react';
 
 import Lazyload from 'react-lazyload';
 
-function Project() {
+function Project({ projectItem }) {
+  console.log(projectItem);
+  // const { id } = project;
+
   return (
     <div className="project-item">
       <div className="project-item__content">
