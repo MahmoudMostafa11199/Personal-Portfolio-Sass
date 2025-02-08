@@ -1,0 +1,130 @@
+.contact {
+  padding-block: 9.6rem;
+  color: $color-grey-400;
+  background-color: $color-grey-800;
+
+  @include respond(phone) {
+    padding-block: 6.4rem;
+  }
+
+  & .heading__secondary {
+    color: $color-grey-50;
+  }
+
+  &-cols {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+
+    @include respond(phone) {
+      flex-direction: column;
+      gap: 3.6rem;
+    }
+  }
+
+  &__info {
+    flex: 1;
+
+    &-list {
+      margin-top: 3.2rem;
+      margin-bottom: 3.6rem;
+
+      @include respond(phone) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        column-gap: 2rem;
+      }
+
+      li:not(:last-child) {
+        margin-bottom: 1.6rem;
+      }
+    }
+  }
+
+  &__item {
+    max-width: fit-content;
+    display: flex;
+    align-items: center;
+
+    & > * {
+      cursor: pointer;
+    }
+    &:hover *,
+    &:active &__link {
+      color: $color-grey-300;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      font-size: 1.6rem;
+      padding: 1rem;
+    }
+  }
+
+  & .position {
+    font-size: 1.6rem;
+    padding: 1rem;
+  }
+
+  &__form {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3.4rem;
+
+    @include respond(phone) {
+      width: 100%;
+      order: -1;
+    }
+
+    & > div {
+      position: relative;
+    }
+
+    &-input {
+      width: 100%;
+      font-size: 1.4rem;
+      background-color: $color-grey-200;
+      color: $color-grey-900;
+      padding: 0.8rem 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      outline: 3px solid transparent;
+
+      transition: all 0.3s;
+
+      &:focus {
+        outline-color: $color-primary-500;
+      }
+    }
+
+    &-input:focus,
+    &-input:not(:placeholder-shown) {
+      & + label {
+        top: -2.6rem;
+        left: 0;
+        color: $color-grey-300;
+      }
+    }
+
+    & textarea {
+      height: 20rem;
+      resize: vertical;
+    }
+
+    &-label {
+      font-size: 1.6rem;
+      position: absolute;
+      top: 0.6rem;
+      left: 10px;
+      pointer-events: none;
+      color: $color-grey-500;
+
+      transition: top 0.3s, left 0.3s;
+    }
+  }
+}
