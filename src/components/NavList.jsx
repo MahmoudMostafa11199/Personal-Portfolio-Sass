@@ -7,27 +7,27 @@ function NavList() {
     <React.Fragment>
       <li>
         <Link to="/" className="main-nav__link">
-          home
+          Home
         </Link>
       </li>
       <li>
         <Link to="/about" className="main-nav__link">
-          about
+          About
         </Link>
       </li>
       <li>
         <Link to="/skills" className="main-nav__link">
-          skills
+          Skills
         </Link>
       </li>
       <li>
         <Link to="/projects" className="main-nav__link">
-          projects
+          Projects
         </Link>
       </li>
       <li>
         <Link to="/contact" className="main-nav__link">
-          contact
+          Contact
         </Link>
       </li>
     </React.Fragment>

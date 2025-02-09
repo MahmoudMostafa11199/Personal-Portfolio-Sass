@@ -8,14 +8,14 @@ function Header() {
   useEffect(() => {
     document
       .querySelector('.main-nav__icon')
-      .addEventListener('click', function () {
+      ?.addEventListener('click', function () {
         document.querySelector('.header').classList.toggle('open-nav');
       });
 
     return () => {
       document
         .querySelector('.main-nav__icon')
-        .removeEventListener('click', this);
+        ?.removeEventListener('click', this);
     };
   }, []);
 

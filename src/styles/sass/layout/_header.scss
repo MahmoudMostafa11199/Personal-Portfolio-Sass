@@ -51,12 +51,6 @@
     }
 
     &__link {
-      &::first-letter {
-        text-transform: capitalize;
-      }
-    }
-
-    &__link {
       &:link,
       &:visited {
         display: inline-block;

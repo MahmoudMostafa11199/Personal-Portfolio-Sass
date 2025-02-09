@@ -1,11 +1,12 @@
 // eslint-disable-next-line react/prop-types
-function Button({ styleType, type, onclick = null, children }) {
+function Button({ styleType, type, onclick = null, disabled, children }) {
   return (
     <button
       type={type === 'submit' ? 'submit' : 'button'}
       className={styleType}
       onClick={onclick}
       data-aos="fade-up"
+      disabled={disabled}
     >
       {children}
     </button>

@@ -1,49 +1,79 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { ArrowRight, ArrowLeft } from '@phosphor-icons/react';
 
-import HeaderPage from '../components/HeaderPage';
 import Button from '../components/Button';
-import Project from '../features/Projects/Project';
+import Spinner from '../components/Spinner';
+import HeaderPage from '../components/HeaderPage';
+import ErrorMessage from '../components/ErrorMessage';
 
-import { portfolioDataAll } from '../features/Projects/projectsData';
+import Project from '../features/Projects/Project';
+import { fetchProjects, getProject } from '../features/Projects/projectSlice';
 
 function Projects() {
+  const {
+    projects: projectAll,
+    projectSelected,
+    loading: isLoading,
+    error: errorMessage,
+  } = useSelector((state) => state.project);
+  const dispatch = useDispatch();
+
   const [searchParams, setSearchParams] = useSearchParams();
+  let id = searchParams.get('id') || '1';
 
-  let projectIndex = searchParams.get('projectIndex') || '0';
+  const totalProjects = useMemo(() => {
+    return projectAll.length;
+  }, [projectAll]);
 
-  const project = portfolioDataAll[projectIndex];
-
-  const handleIndexIncrement = () => {
-    projectIndex = parseInt(projectIndex) + 1;
-    if (projectIndex >= portfolioDataAll.length) projectIndex = 0;
-    setSearchParams({ projectIndex });
+  const handleIncrement = () => {
+    id = parseInt(id) + 1;
+    if (id > totalProjects) id = 1;
+    setSearchParams({ id });
   };
 
-  const handleIndexDecrement = () => {
-    projectIndex = parseInt(projectIndex) - 1;
-    if (projectIndex < 0) projectIndex = portfolioDataAll.length - 1;
-    setSearchParams({ projectIndex });
+  const handleDecrement = () => {
+    id = parseInt(id) - 1;
+    if (id <= 0) id = totalProjects;
+    setSearchParams({ id });
   };
+
+  useEffect(() => {
+    if (!totalProjects) dispatch(fetchProjects());
+  }, [dispatch, totalProjects]);
+
+  useEffect(() => {
+    dispatch(getProject(id));
+  }, [dispatch, id]);
 
   return (
     <Fragment>
       <HeaderPage title="My Portfolio" />
       <section className="project-page u-padding-vertical-hugo">
         <div className="container">
-          <Project projectItem={project} />
+          <p className="project-page__length">
+            Project {parseInt(id)} / {totalProjects}
+          </p>
+
+          {isLoading && <Spinner />}
+          {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
+          {!isLoading && !errorMessage && (
+            <Project projectItem={projectSelected} />
+          )}
 
           <div className="project-item__pagination">
             <Button
               styleType="btn btn__secondary"
-              onclick={handleIndexDecrement}
+              onclick={handleDecrement}
+              disabled={isLoading || errorMessage}
             >
               <ArrowLeft size={32} />
             </Button>
             <Button
               styleType="btn btn__secondary"
-              onclick={handleIndexIncrement}
+              onclick={handleIncrement}
+              disabled={isLoading || errorMessage}
             >
               <ArrowRight size={32} />
             </Button>

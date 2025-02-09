@@ -2,4 +2,11 @@
   min-height: 65vh;
   background-color: $color-grey-800;
   color: $color-grey-50;
+
+  &__length {
+    font-size: 2rem;
+    text-align: end;
+    margin-bottom: 1.4rem;
+    color: $color-grey-300;
+  }
 }
