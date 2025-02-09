@@ -1,4 +1,13 @@
-// eslint-disable-next-line react/prop-types
+import PropTypes from 'prop-types';
+
+Button.propTypes = {
+  styleType: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  onclick: PropTypes.func,
+  disabled: PropTypes.bool,
+  children: PropTypes.node.isRequired,
+};
+
 function Button({ styleType, type, onclick = null, disabled, children }) {
   return (
     <button

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   FacebookLogo,
   LinkedinLogo,
@@ -5,6 +6,12 @@ import {
   XLogo,
   InstagramLogo,
 } from '@phosphor-icons/react';
+
+Social.propTypes = {
+  borderColor: PropTypes.string,
+  hover: PropTypes.string,
+  sec: PropTypes.string,
+};
 
 function Social({ borderColor = '', hover = '', sec = '' }) {
   return (

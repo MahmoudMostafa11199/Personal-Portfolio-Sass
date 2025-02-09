@@ -1,4 +1,10 @@
 import { useSearchParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+Filter.propTypes = {
+  filterField: PropTypes.string.isRequired,
+  options: PropTypes.array.isRequired,
+};
 
 function Filter({ filterField, options }) {
   const [searchParams, setSearchParams] = useSearchParams();

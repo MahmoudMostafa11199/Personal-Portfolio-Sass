@@ -1,7 +1,17 @@
-/* eslint-disable react/prop-types */
-
+import PropTypes from 'prop-types';
 import LazyLoad from 'react-lazyload';
 import { GithubLogo, Eye } from '@phosphor-icons/react';
+
+Project.propTypes = {
+  project: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    liveLink: PropTypes.string.isRequired,
+    githubLink: PropTypes.string.isRequired,
+    technologies: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
+};
 
 function Project({ project }) {
   const { title, description, image, liveLink, githubLink, technologies } =

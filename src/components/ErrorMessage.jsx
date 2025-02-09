@@ -1,5 +1,10 @@
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Button from './Button';
+
+ErrorMessage.propTypes = {
+  errorMessage: PropTypes.string.isRequired,
+};
 
 function ErrorMessage({ errorMessage }) {
   const navigate = useNavigate();

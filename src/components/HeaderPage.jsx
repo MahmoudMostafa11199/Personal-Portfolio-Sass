@@ -1,5 +1,9 @@
-/* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+HeaderPage.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 function HeaderPage({ title }) {
   return (
