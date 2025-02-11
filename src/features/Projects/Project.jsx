@@ -1,15 +1,16 @@
+import Lazyload from 'react-lazyload';
 import PropTypes from 'prop-types';
 import { GithubLogo, ArrowUpRight } from '@phosphor-icons/react';
-import Lazyload from 'react-lazyload';
 
 Project.propTypes = {
   projectItem: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    liveLink: PropTypes.string.isRequired,
-    githubLink: PropTypes.string.isRequired,
+    id: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.string,
+    liveLink: PropTypes.string,
+    githubLink: PropTypes.string,
+    length: PropTypes.number,
     technologies: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
 };
@@ -17,8 +18,9 @@ Project.propTypes = {
 function Project({ projectItem }) {
   const { id, title, description, image, liveLink, githubLink, technologies } =
     projectItem;
-
   const formattedId = id > 9 ? id : `0${id}`;
+
+  if (!id) return;
 
   return (
     <div className="project-item">

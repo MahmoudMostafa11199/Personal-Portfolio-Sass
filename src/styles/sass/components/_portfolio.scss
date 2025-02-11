@@ -53,8 +53,11 @@
     }
   }
 
-  & .project__tech-list {
-    margin-bottom: 3.6rem;
+  & .project__tech {
+    font-size: 1.3rem;
+    &-list {
+      margin-bottom: 3.6rem;
+    }
   }
 
   &__link {

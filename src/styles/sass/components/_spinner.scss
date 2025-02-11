@@ -1,5 +1,13 @@
+.loader-container {
+  height: 44.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .loader {
   font-size: 10px;
+  display: block;
   width: 1em;
   height: 1em;
   border-radius: 50%;

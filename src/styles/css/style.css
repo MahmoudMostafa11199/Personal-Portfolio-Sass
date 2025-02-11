@@ -460,26 +460,38 @@ button:focus-visible {
 .project__tech[data-tech=react] {
   background-color: #009bc5;
 }
-.project__tech[data-tech=next] {
+.project__tech[data-tech=nextjs] {
   background-color: #000;
 }
-.project__tech[data-tech=redux] {
+.project__tech[data-tech=reduxtoolkit] {
   background-color: #764abc;
-}
-.project__tech[data-tech=tailwindcss] {
-  background-color: #2482ac;
-}
-.project__tech[data-tech=reactquery] {
-  background-color: #00d1b2;
 }
 .project__tech[data-tech=reactrouter] {
   background-color: #6366f1;
 }
-.project__tech[data-tech=styledcomponents] {
-  background-color: #319795;
+.project__tech[data-tech=reactquery] {
+  background-color: #00d1b2;
+}
+.project__tech[data-tech=tailwindcss] {
+  background-color: #2482ac;
 }
 .project__tech[data-tech=supabase] {
   background-color: #ed8936;
+}
+.project__tech[data-tech=sass] {
+  background-color: #cf649a;
+}
+.project__tech[data-tech=bootstrap] {
+  background-color: #6f10f4;
+}
+.project__tech[data-tech=styledcomponents] {
+  background-color: #319795;
+}
+.project__tech[data-tech=framermotion] {
+  background-color: #958f1b;
+}
+.project__tech[data-tech=formik] {
+  background-color: #19386f;
 }
 .project__tech[data-tech=reacthooksform] {
   background-color: #f56565;
@@ -550,6 +562,9 @@ button:focus-visible {
     font-size: 1.4rem;
   }
 }
+.project-item .project__tech {
+  font-size: 1.3rem;
+}
 .project-item .project__tech-list {
   margin-bottom: 3.6rem;
 }
@@ -608,8 +623,16 @@ button:focus-visible {
   display: flex;
 }
 
+.loader-container {
+  height: 44.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .loader {
   font-size: 10px;
+  display: block;
   width: 1em;
   height: 1em;
   border-radius: 50%;

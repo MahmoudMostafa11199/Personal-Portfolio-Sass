@@ -49,3 +49,5 @@ const projectSlice = createSlice({
 export { fetchProjects, getProject };
 
 export default projectSlice.reducer;
+
+export const totalProjectsLength = (state) => state.project.projects.length;

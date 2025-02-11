@@ -1,5 +1,4 @@
-import { Fragment, useEffect, useMemo } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Fragment, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ArrowRight, ArrowLeft } from '@phosphor-icons/react';
 
@@ -9,42 +8,39 @@ import HeaderPage from '../components/HeaderPage';
 import ErrorMessage from '../components/ErrorMessage';
 
 import Project from '../features/Projects/Project';
-import { fetchProjects, getProject } from '../features/Projects/projectSlice';
+import {
+  fetchProjects,
+  getProject,
+  totalProjectsLength,
+} from '../features/Projects/projectSlice';
 
 function Projects() {
+  const [id, setId] = useState(1);
+
+  const projectsLength = useSelector(totalProjectsLength);
   const {
-    projects: projectAll,
     projectSelected,
     loading: isLoading,
     error: errorMessage,
   } = useSelector((state) => state.project);
   const dispatch = useDispatch();
 
-  const [searchParams, setSearchParams] = useSearchParams();
-  let id = searchParams.get('id') || '1';
-
-  const totalProjects = useMemo(() => {
-    return projectAll.length;
-  }, [projectAll]);
-
   const handleIncrement = () => {
-    id = parseInt(id) + 1;
-    if (id > totalProjects) id = 1;
-    setSearchParams({ id });
+    if (id >= projectsLength) setId(1);
+    else setId((i) => i + 1);
   };
 
   const handleDecrement = () => {
-    id = parseInt(id) - 1;
-    if (id <= 0) id = totalProjects;
-    setSearchParams({ id });
+    if (id <= 1) setId(projectsLength);
+    else setId((i) => i - 1);
   };
 
   useEffect(() => {
-    if (!totalProjects) dispatch(fetchProjects());
-  }, [dispatch, totalProjects]);
+    dispatch(fetchProjects());
+  }, []);
 
   useEffect(() => {
-    dispatch(getProject(id));
+    dispatch(getProject(id.toString()));
   }, [dispatch, id]);
 
   return (
@@ -53,12 +49,12 @@ function Projects() {
       <section className="project-page u-padding-vertical-hugo">
         <div className="container">
           <p className="project-page__length">
-            Project {parseInt(id)} / {totalProjects}
+            Project {id} / {projectsLength}
           </p>
 
           {isLoading && <Spinner />}
           {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
-          {!isLoading && !errorMessage && (
+          {!errorMessage && !isLoading && (
             <Project projectItem={projectSelected} />
           )}
 
@@ -66,14 +62,14 @@ function Projects() {
             <Button
               styleType="btn btn__secondary"
               onclick={handleDecrement}
-              disabled={isLoading || errorMessage}
+              disabled={isLoading}
             >
               <ArrowLeft size={32} />
             </Button>
             <Button
               styleType="btn btn__secondary"
               onclick={handleIncrement}
-              disabled={isLoading || errorMessage}
+              disabled={isLoading}
             >
               <ArrowRight size={32} />
             </Button>
