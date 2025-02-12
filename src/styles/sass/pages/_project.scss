@@ -6,7 +6,11 @@
   &__length {
     font-size: 2rem;
     text-align: end;
-    margin-bottom: 1.4rem;
     color: $color-grey-300;
+    margin-bottom: 1.4rem;
+
+    @include respond(tab-port) {
+      margin-right: 1.4rem;
+    }
   }
 }

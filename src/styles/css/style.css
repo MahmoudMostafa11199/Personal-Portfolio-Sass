@@ -515,6 +515,7 @@ button:focus-visible {
 @media only screen and (max-width: 56.25em) {
   .project-item {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 .project-item__content {
@@ -603,11 +604,17 @@ button:focus-visible {
 }
 @media only screen and (max-width: 56.25em) {
   .project-item__img {
+    width: 95%;
     aspect-ratio: 10/5;
   }
 }
+@media only screen and (max-width: 40.5em) {
+  .project-item__img {
+    aspect-ratio: 10/6;
+  }
+}
 .project-item__img-container {
-  width: 100%;
+  text-align: center;
 }
 @media only screen and (max-width: 56.25em) {
   .project-item__img-container {
@@ -628,6 +635,11 @@ button:focus-visible {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media only screen and (max-width: 56.25em) {
+  .loader-container {
+    height: 60rem;
+  }
 }
 
 .loader {
@@ -1410,8 +1422,13 @@ button:focus-visible {
 .project-page__length {
   font-size: 2rem;
   text-align: end;
-  margin-bottom: 1.4rem;
   color: #d1d5db;
+  margin-bottom: 1.4rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .project-page__length {
+    margin-right: 1.4rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

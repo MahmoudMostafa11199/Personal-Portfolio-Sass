@@ -8,6 +8,7 @@
 
   @include respond(tab-port) {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   &__content {
@@ -101,11 +102,16 @@
     border: 1px solid $color-grey-900;
 
     @include respond(tab-port) {
+      width: 95%;
       aspect-ratio: 10/5;
     }
 
+    @include respond(phone) {
+      aspect-ratio: 10/6;
+    }
+
     &-container {
-      width: 100%;
+      text-align: center;
 
       @include respond(tab-port) {
         order: -1;

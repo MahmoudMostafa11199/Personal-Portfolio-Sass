@@ -3,6 +3,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include respond(tab-port) {
+    height: 60rem;
+  }
 }
 
 .loader {
