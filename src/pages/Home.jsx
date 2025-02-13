@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
-import { downloadCv } from '../utils/downloadCv';
+import Lazyload from 'react-lazyload';
 
+import { downloadCv } from '../utils/downloadCv';
 import Contact from './Contact';
 
 import ProjectsHome from '../features/Projects/ProjectsHome';
@@ -9,12 +10,12 @@ import Education from '../features/Experience/Education';
 import Services from '../features/Skills/Services';
 import SkillSection from '../features/Skills/SkillSection';
 import Button from '../components/Button';
-// import Social from '../components/Social';
+import Social from '../components/Social';
 
 function Home() {
   const handleToFooter = () => {
     const footerEl = document.querySelector('footer');
-    footerEl.scrollIntoView({ behavior: 'smooth' });
+    footerEl.scrollIntoView();
   };
 
   return (
@@ -39,15 +40,16 @@ function Home() {
             </div>
           </div>
           <div className="home__img-box" data-aos="fade-left">
-            <img
-              src="/imgs/mahmoud.png"
-              alt="perosnal img"
-              className="home__img"
-            />
+            <Lazyload hight={580}>
+              <img
+                src="/imgs/mahmoud.png"
+                alt="perosnal img"
+                className="home__img"
+              />
+            </Lazyload>
           </div>
-
-          {/* <Social sec="sec-home" /> */}
         </div>
+        {<Social sec="sec-home" />}
       </section>
 
       <AboutSection />

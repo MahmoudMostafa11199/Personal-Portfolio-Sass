@@ -1,18 +1,20 @@
 import { WhatsappLogo, MapPin, EnvelopeSimple } from '@phosphor-icons/react';
 
-// import Logo from '../components/Logo';
 import Button from '../components/Button';
 import Social from '../components/Social';
 import HeadingSection from '../components/HeadingSection';
 
+import SendMessageTelegram from '../utils/sendMessageTelegram';
+
 function Contact() {
+  const { formData, handleChange, handleSubmit } = SendMessageTelegram();
+
   return (
     <section className="contact">
       <div className="container">
         <HeadingSection>Contact</HeadingSection>
         <div className="contact-cols">
           <div className="contact__info">
-            {/* <Logo sec="contact" /> */}
             <ul className="contact__info-list">
               <li data-aos="fade-up">
                 <h4>Phone</h4>
@@ -50,7 +52,7 @@ function Contact() {
                 </div>
               </li>
             </ul>
-            <Social borderColor="borderTop" hover="nine" />
+            <Social />
           </div>
 
           <form
@@ -58,6 +60,7 @@ function Contact() {
             name="contact"
             method="POST"
             data-netlify="true"
+            onSubmit={handleSubmit}
           >
             <div className="input-box" data-aos="fade-up">
               <input
@@ -65,6 +68,8 @@ function Contact() {
                 type="text"
                 className="contact__form-input"
                 placeholder=""
+                value={formData.name}
+                onChange={handleChange}
                 required
               />
               <label htmlFor="name" className="contact__form-label">
@@ -78,6 +83,8 @@ function Contact() {
                 type="email"
                 className="contact__form-input"
                 placeholder=""
+                value={formData.email}
+                onChange={handleChange}
                 required
               />
               <label htmlFor="email" className="contact__form-label">
@@ -89,6 +96,8 @@ function Contact() {
                 id="message"
                 className="contact__form-input"
                 placeholder=""
+                value={formData.message}
+                onChange={handleChange}
                 required
               ></textarea>
               <label htmlFor="message" className="contact__form-label">

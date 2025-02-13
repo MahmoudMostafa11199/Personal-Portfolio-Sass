@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// function NavList({ link, style }) {
 function NavList() {
   return (
     <React.Fragment>
@@ -35,9 +34,3 @@ function NavList() {
 }
 
 export default NavList;
-
-// <li key={link}>
-//   <Link to={/#${link}`} className={style.main-nav__link}>
-//     {link}
-//   </Link>
-// </li>

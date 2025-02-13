@@ -1,35 +1,42 @@
-import { useEffect } from 'react';
+import { useRef } from 'react';
+import PropTypes from 'prop-types';
 import { List, XCircle } from '@phosphor-icons/react';
 
 import Logo from '../components/Logo';
 import NavList from '../components/NavList';
 
-function Header() {
-  useEffect(() => {
-    document
-      .querySelector('.main-nav__icon')
-      ?.addEventListener('click', function () {
-        document.querySelector('.header').classList.toggle('open-nav');
-      });
+Header.propTypes = {
+  isOpenNav: PropTypes.bool.isRequired,
+  setIsOpenNav: PropTypes.func.isRequired,
+};
+function Header({ isOpenNav, setIsOpenNav }) {
+  const headerEl = useRef(null);
 
-    return () => {
-      document
-        .querySelector('.main-nav__icon')
-        ?.removeEventListener('click', this);
-    };
-  }, []);
+  const handleNav = () => {
+    setIsOpenNav(!isOpenNav);
+    headerEl.current.classList.toggle('open-nav');
+  };
 
   return (
-    <header className="header sticky">
+    <header className="header sticky" ref={headerEl}>
       <Logo />
       <nav className="main-nav">
         <ul className="main-nav__list">
           <NavList />
         </ul>
       </nav>
-      <button className="main-nav__icon">
-        <List className="mobile__nav mobile__nav--open" size={35} />
-        <XCircle className="mobile__nav mobile__nav--close" size={35} />
+      <button
+        className="main-nav__icon"
+        aria-label={
+          isOpenNav ? 'Close navigation menu' : 'Open navigation menu'
+        }
+        onClick={handleNav}
+      >
+        {!isOpenNav ? (
+          <List className="mobile__nav" size={35} />
+        ) : (
+          <XCircle className="mobile__nav" size={35} />
+        )}
       </button>
     </header>
   );

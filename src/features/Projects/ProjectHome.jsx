@@ -26,17 +26,19 @@ function Project({ project }) {
         <div className="project__link">
           <a
             href={liveLink}
+            className="project__link--live"
             target="_blank"
             rel="noopener noreferrer"
-            className="project__link--live"
+            aria-label="Link to Live Project"
           >
             <Eye size={24} />
           </a>
           <a
             href={githubLink}
+            className="project__link--github"
             target="_blank"
             rel="noopener noreferrer"
-            className="project__link--github"
+            aria-label="Link to Github Repository"
           >
             <GithubLogo size={24} />
           </a>

@@ -1,7 +1,8 @@
+import Lazyload from 'react-lazyload';
+import { downloadCv } from '../../utils/downloadCv';
+
 import Button from '../../components/Button';
 import HeadingSection from '../../components/HeadingSection';
-
-import { downloadCv } from '../../utils/downloadCv';
 
 function About() {
   const calcAge = () => {
@@ -17,12 +18,13 @@ function About() {
         <HeadingSection>About me</HeadingSection>
         <div className="about">
           <div className="about__img-box" data-aos="fade-up-right">
-            <img
-              src="imgs/mahmoud.png"
-              // src="imgs/mahmoud-edit.webp"
-              alt="personal-photo"
-              className="about__img"
-            />
+            <Lazyload height={550}>
+              <img
+                src="imgs/mahmoud.png"
+                alt="personal-photo"
+                className="about__img"
+              />
+            </Lazyload>
           </div>
 
           <div className="about__text-box">

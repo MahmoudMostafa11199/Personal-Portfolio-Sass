@@ -6,13 +6,8 @@
     padding: 0;
   }
 
-  .borderTop {
-    border-top: 2px solid $color-grey-800;
-  }
-
   &__list {
     display: flex;
-    align-items: center;
     column-gap: 1.8rem;
 
     @include respond(tab-port) {
@@ -20,45 +15,56 @@
     }
   }
 
-  &.sec-home &__list {
-    flex-direction: column;
-    row-gap: 1.8rem;
-
-    position: absolute;
-    bottom: 5%;
-    left: 0;
-  }
-
   &__link {
     &:link,
     &:visited {
+      display: block;
       color: $color-grey-500;
       padding: 0.6rem;
     }
-  }
 
-  &.sec-home &__link {
-    &:hover,
-    &:active {
-      color: $color-grey-300;
-    }
-  }
-
-  .nine {
     &:hover,
     &:active {
       color: $color-grey-400;
     }
   }
 
-  &__text {
-    color: $color-grey-800;
-    font-size: 3rem;
-    font-weight: 900;
-    letter-spacing: 1px;
-    margin-bottom: 6rem;
-    text-transform: uppercase;
-    transform: rotate(-90deg);
-    user-select: none;
+  &.sec-home &__list {
+    flex-direction: column;
+    row-gap: 1rem;
+    position: absolute;
+    top: 50%;
+    left: -1.6rem;
+    transform: translateY(-40%);
+
+    @include respond(phone) {
+      transform: translateY(0);
+    }
+  }
+
+  &.sec-home &__link {
+    &:link,
+    &:visited {
+      width: 4.6rem;
+      font-weight: 400;
+      background-color: $color-grey-100;
+      color: $color-grey-900;
+      border-radius: 10rem;
+      padding-inline: 1.8rem;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      transition: width 0.3s ease-in-out;
+    }
+
+    svg {
+      flex-shrink: 0;
+      padding-right: 0.6rem;
+    }
+
+    &:hover,
+    &:active {
+      width: 12.4rem;
+    }
   }
 }

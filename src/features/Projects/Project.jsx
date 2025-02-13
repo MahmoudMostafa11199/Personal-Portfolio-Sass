@@ -33,11 +33,12 @@ function Project({ projectItem }) {
         githubLink={githubLink}
       />
 
-      <ProjectImage image={image} />
+      <ProjectImage image={image} title={title} />
     </div>
   );
 }
 
+/* eslint-disable react/prop-types */
 function ProjectContent({
   id,
   title,
@@ -55,7 +56,7 @@ function ProjectContent({
       <p className="project-item__description">{description}</p>
 
       <ul className="project__tech-list">
-        {technologies?.map((tech) => (
+        {technologies.map((tech) => (
           <li
             key={tech}
             className="project__tech"
@@ -69,31 +70,40 @@ function ProjectContent({
       <hr />
 
       <div className="project-item__link-list" data-aos="fade-up">
-        <ProjectLink href={liveLink} icon={<ArrowUpRight size={24} />} />
-        <ProjectLink href={githubLink} icon={<GithubLogo size={24} />} />
+        <ProjectLink
+          href={liveLink}
+          name="Live"
+          icon={<ArrowUpRight size={24} />}
+        />
+        <ProjectLink
+          href={githubLink}
+          name="Github"
+          icon={<GithubLogo size={24} />}
+        />
       </div>
     </div>
   );
 }
 
-function ProjectLink({ href, icon }) {
+function ProjectLink({ href, icon, name }) {
   return (
     <a
       href={href}
       className="project-item__link"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label={`Link to ${name} project`}
     >
       {icon}
     </a>
   );
 }
 
-function ProjectImage({ image }) {
+function ProjectImage({ image, title }) {
   return (
     <div className="project-item__img-container" data-aos="fade-left">
       <Lazyload height={300}>
-        <img className="project-item__img" src={image} alt="map-workout" />
+        <img className="project-item__img" src={image} alt={title} />
       </Lazyload>
     </div>
   );

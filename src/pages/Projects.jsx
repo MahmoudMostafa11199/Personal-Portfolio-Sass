@@ -23,20 +23,22 @@ function Projects() {
     loading: isLoading,
     error: errorMessage,
   } = useSelector((state) => state.project);
+
   const dispatch = useDispatch();
 
-  const handleIncrement = () => {
+  const handlePrev = () => {
+    if (id <= 1) setId(projectsLength);
+    else setId((i) => i - 1);
+  };
+  const handleNext = () => {
     if (id >= projectsLength) setId(1);
     else setId((i) => i + 1);
   };
 
-  const handleDecrement = () => {
-    if (id <= 1) setId(projectsLength);
-    else setId((i) => i - 1);
-  };
-
   useEffect(() => {
     dispatch(fetchProjects());
+
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -61,15 +63,17 @@ function Projects() {
           <div className="project-item__pagination">
             <Button
               styleType="btn btn__secondary"
-              onclick={handleDecrement}
+              onclick={handlePrev}
               disabled={isLoading}
+              label="Previous Project"
             >
               <ArrowLeft size={32} />
             </Button>
             <Button
               styleType="btn btn__secondary"
-              onclick={handleIncrement}
+              onclick={handleNext}
               disabled={isLoading}
+              label="Next Project"
             >
               <ArrowRight size={32} />
             </Button>
