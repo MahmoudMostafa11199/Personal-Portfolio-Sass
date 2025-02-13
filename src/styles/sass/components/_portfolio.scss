@@ -98,15 +98,11 @@
 
   &__img {
     width: 100%;
-    aspect-ratio: 16/11;
+    aspect-ratio: 16/10;
     border: 1px solid $color-grey-900;
 
     @include respond(tab-port) {
       width: 95%;
-      aspect-ratio: 10/5;
-    }
-
-    @include respond(phone) {
       aspect-ratio: 10/6;
     }
 
