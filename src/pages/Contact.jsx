@@ -17,7 +17,7 @@ function Contact() {
           <div className="contact__info">
             <ul className="contact__info-list">
               <li data-aos="fade-up">
-                <h4>Phone</h4>
+                <h4 className="contact__title">Phone</h4>
                 <div className="contact__item">
                   <WhatsappLogo className="contact__logo" size={24} />
                   <a
@@ -31,14 +31,14 @@ function Contact() {
                 </div>
               </li>
               <li data-aos="fade-up">
-                <h4>Address</h4>
+                <h4 className="contact__title">Address</h4>
                 <div className="contact__item">
                   <MapPin className="contact__logo" size={24} />
                   <span className="position">Cairo, Egypt</span>
                 </div>
               </li>
               <li data-aos="fade-up">
-                <h4>Email</h4>
+                <h4 className="contact__title">Email</h4>
                 <div className="contact__item">
                   <EnvelopeSimple className="contact__logo" size={24} />
                   <a

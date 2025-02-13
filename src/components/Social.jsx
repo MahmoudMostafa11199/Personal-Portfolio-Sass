@@ -30,7 +30,7 @@ function Social({ sec = '' }) {
         <li>
           <a
             className="social__link"
-            href="https://www.linkedin.com/in/mahmoud-mustafa-7417b51b1"
+            href="https://www.linkedin.com/in/mahmoud-mostafa-7417b51b1"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn Profile"
