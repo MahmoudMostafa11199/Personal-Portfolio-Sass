@@ -9,8 +9,8 @@
     "dev": "npm-run-all --parallel dev:react watch:sass",
     "compile:sass": "sass src/styles/sass/main.scss src/styles/css/style.comp.css",
     "prefex:css": "postcss --use autoprefixer -b 'last 10 versions' src/styles/css/style.comp.css -o src/styles/css/style.prefix.css",
-    "compress:css": "sass src/styles/css/style.prefix.css src/styles/css/style.css --output-style compressed",
-    "build:css": "npm-run-all compile:sass concat:css prefex:css compress:css",
+    "compress:css": "sass src/styles/css/style.prefix.css src/styles/css/style.css --style=compressed",
+    "build:css": "npm-run-all compile:sass prefex:css compress:css",
     "build": "vite build",
     "preview": "vite preview"
   },
