@@ -331,10 +331,6 @@ button:focus-visible {
   position: fixed;
   right: 1.6rem;
   bottom: 1.6rem;
-  opacity: 0;
-}
-.btn__scroll-top.show {
-  opacity: 1;
 }
 
 .error-message {
