@@ -22,11 +22,11 @@ function Contact() {
                   <WhatsappLogo className="contact__logo" size={24} />
                   <a
                     className="contact__link"
-                    href="https://wa.me/+201018672627"
+                    href="https://wa.me/+201141316313"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    +20 1018672627
+                    +20 1141316313
                   </a>
                 </div>
               </li>

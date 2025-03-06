@@ -1,16 +1,31 @@
+import { useEffect, useState } from 'react';
 import Lazyload from 'react-lazyload';
+
 import { downloadCv } from '../../utils/downloadCv';
 
 import Button from '../../components/Button';
 import HeadingSection from '../../components/HeadingSection';
 
 function About() {
-  const calcAge = () => {
-    const currentYear = new Date().getFullYear();
-    const birthYear = 1999;
+  const [age, setAge] = useState(0);
 
-    return currentYear - birthYear;
-  };
+  useEffect(() => {
+    const calcAgeAPI = async () => {
+      const res = await fetch(
+        'https://api.apiverve.com/v1/agecalculator?dob=1999-11-01',
+        {
+          headers: {
+            'x-api-key': '5d1e6301-b85f-4e49-8fe4-1dfc13454e0c',
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      const { data } = await res.json();
+      setAge(data.age_years);
+    };
+
+    calcAgeAPI();
+  }, []);
 
   return (
     <section className="about-section">
@@ -29,23 +44,23 @@ function About() {
 
           <div className="about__text-box">
             <h3 className="headeing heading__tertiary" data-aos="fade-up">
-              Hi 👋🏻, I&apos;m Mahmoud Mostafa
+              Hello 👋🏻, I&apos;m Mahmoud Mostafa
             </h3>
             <p className="about__description" data-aos="fade-up">
               I am a front-end developer And I have a passion for creating
               amazing and intuitive user interfaces. With my strong HTML, CSS,
-              JavaScript, and React skills, I can create interactive and
-              attractive websites and applications that provide an exceptional
-              user experience. I can take mockups of the design and translate
-              them into fully functional web pages, ensuring that the final
-              product not only looks great, it also works smoothly
+              JavaScript, React.js, and Next.js skills, I can create interactive
+              and attractive websites and applications that provide an
+              exceptional user experience. I can take mockups of the design and
+              translate them into fully functional web pages, ensuring that the
+              final product not only looks great, it also works smoothly
             </p>
 
             <div className="about__info" data-aos="fade-up">
               <div>
                 <p>
                   <span className="title">Age:</span>
-                  <span className="text"> {calcAge()}</span>
+                  <span className="text"> {age}</span>
                 </p>
                 <p>
                   <span className="title">Country:</span>
@@ -63,7 +78,7 @@ function About() {
                 </p>
                 <p>
                   <span className="title">Phone:</span>
-                  <span className="text"> +20 1018672627</span>
+                  <span className="text"> +20 1141316313</span>
                 </p>
                 {/* <p>
                   <span className='title'>Marital Status:</span>
