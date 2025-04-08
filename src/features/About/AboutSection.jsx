@@ -47,13 +47,13 @@ function About() {
               Hello 👋🏻, I&apos;m Mahmoud Mostafa
             </h3>
             <p className="about__description" data-aos="fade-up">
-              I am a front-end developer And I have a passion for creating
+              I&apos;m a Front-end Developer and I have a passion for creating
               amazing and intuitive user interfaces. With my strong HTML, CSS,
-              JavaScript, React.js, and Next.js skills, I can create interactive
-              and attractive websites and applications that provide an
-              exceptional user experience. I can take mockups of the design and
-              translate them into fully functional web pages, ensuring that the
-              final product not only looks great, it also works smoothly
+              JavaScript, React.js, Next.js and Vue skills, I can create
+              interactive and attractive websites and applications that provide
+              an exceptional user experience. I can take mockups of the design
+              and translate them into fully functional web pages, ensuring that
+              the final product not only looks great, it also works smoothly
             </p>
 
             <div className="about__info" data-aos="fade-up">
