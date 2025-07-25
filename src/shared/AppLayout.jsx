@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation, ScrollRestoration } from 'react-router-dom';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -11,13 +11,13 @@ function AppLayout() {
 
   useEffect(() => {
     setIsOpenNav(false);
-    window.scrollTo(0, 0);
     document.querySelector('.header').classList.remove('open-nav');
   }, [location]);
 
   return (
     <>
       <Header isOpenNav={isOpenNav} setIsOpenNav={setIsOpenNav} />
+      <ScrollRestoration />
 
       <main>
         <Outlet />

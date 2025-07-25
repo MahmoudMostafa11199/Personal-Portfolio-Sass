@@ -1,31 +1,13 @@
-import { useEffect, useState } from 'react';
 import Lazyload from 'react-lazyload';
 
 import { downloadCv } from '../../utils/downloadCv';
+import { calculateAge } from '../../utils/helper';
 
 import Button from '../../components/Button';
 import HeadingSection from '../../components/HeadingSection';
 
 function About() {
-  const [age, setAge] = useState(0);
-
-  useEffect(() => {
-    const calcAgeAPI = async () => {
-      const res = await fetch(
-        'https://api.apiverve.com/v1/agecalculator?dob=1999-11-01',
-        {
-          headers: {
-            'x-api-key': '5d1e6301-b85f-4e49-8fe4-1dfc13454e0c',
-            'Content-Type': 'application/json',
-          },
-        }
-      );
-      const { data } = await res.json();
-      setAge(data.age_years);
-    };
-
-    calcAgeAPI();
-  }, []);
+  const age = calculateAge('1999-11-01');
 
   return (
     <section className="about-section">
@@ -48,12 +30,13 @@ function About() {
             </h3>
             <p className="about__description" data-aos="fade-up">
               I&apos;m a Front-end Developer and I have a passion for creating
-              amazing and intuitive user interfaces. With my strong HTML, CSS,
-              JavaScript, React.js, Next.js and Vue skills, I can create
-              interactive and attractive websites and applications that provide
-              an exceptional user experience. I can take mockups of the design
-              and translate them into fully functional web pages, ensuring that
-              the final product not only looks great, it also works smoothly
+              amazing and intuitive user interfaces. With my strong JavaScript,
+              TypeScript, React.js, Next.js, Vue, and Nuxt.js skills, I can
+              create interactive and attractive websites and applications that
+              provide an exceptional user experience. I can take mockups of the
+              design and translate them into fully functional web pages,
+              ensuring that the final product not only looks great, it also
+              works smoothly
             </p>
 
             <div className="about__info" data-aos="fade-up">
